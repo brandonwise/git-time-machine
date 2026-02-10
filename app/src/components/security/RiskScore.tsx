@@ -253,17 +253,17 @@ function StatCard({
 }) {
   return (
     <motion.div 
-      className="p-4 rounded-xl bg-black/30 border border-white/10"
+      className="p-4 rounded-xl bg-black/30 border border-white/10 overflow-hidden"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.02 }}
     >
-      <div className="flex items-center gap-2 mb-1">
-        <span>{icon}</span>
-        <span className="text-xs text-gray-400">{label}</span>
+      <div className="flex items-center gap-2 mb-1 min-w-0">
+        <span className="flex-shrink-0">{icon}</span>
+        <span className="text-xs text-gray-400 truncate">{label}</span>
       </div>
       <div 
-        className="text-2xl font-bold"
+        className="text-2xl font-bold truncate"
         style={{ color }}
       >
         {value}
@@ -282,9 +282,9 @@ function RiskBar({
   color: string
 }) {
   return (
-    <div className="flex items-center gap-3">
-      <span className="text-xs text-gray-400 w-24">{label}</span>
-      <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+    <div className="flex items-center gap-3 min-w-0">
+      <span className="text-xs text-gray-400 w-24 flex-shrink-0 truncate">{label}</span>
+      <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden min-w-0">
         <motion.div
           className="h-full rounded-full"
           style={{ backgroundColor: color }}
@@ -294,7 +294,7 @@ function RiskBar({
         />
       </div>
       <span 
-        className="text-xs font-medium w-10 text-right"
+        className="text-xs font-medium w-10 text-right flex-shrink-0"
         style={{ color }}
       >
         {value}%
