@@ -1,0 +1,56 @@
+{
+  "name": "git-time-machine",
+  "version": "2.0.0",
+  "description": "Understand any Git repository — visualize history, detect duplicates, find stale flags, analyze bloat",
+  "type": "module",
+  "bin": {
+    "gtm": "./cli/index.js",
+    "git-time-machine": "./cli/index.js"
+  },
+  "main": "./cli/index.js",
+  "exports": {
+    ".": "./cli/index.js",
+    "./authors": "./cli/commands/authors.js",
+    "./flags": "./cli/commands/flags.js",
+    "./bloat": "./cli/commands/bloat.js"
+  },
+  "scripts": {
+    "dev": "cd app && pnpm dev",
+    "build": "cd app && pnpm build",
+    "test": "node --test cli/**/*.test.js",
+    "lint": "eslint cli/",
+    "prepare": "cd app && pnpm install"
+  },
+  "keywords": [
+    "git",
+    "visualization",
+    "repository",
+    "analysis",
+    "feature-flags",
+    "mailmap",
+    "authors",
+    "bloat",
+    "security"
+  ],
+  "author": "Brandon Wise",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brandonwise/git-time-machine.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0"
+  },
+  "files": [
+    "cli/",
+    "app/dist/",
+    "README.md",
+    "LICENSE"
+  ]
+}
